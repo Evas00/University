@@ -1,0 +1,50 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    {//1 
+        int a=8, b=7, S, P;
+        S=a*b;
+        P=(a+b)*2;
+        cout<<"S="<<S<<endl<<"P="<<P<<endl<<endl;
+    }
+    {//2
+        int d=7;
+        float r, S, C;
+        r=d/2;
+        S=3.14*r*r;
+        C=2*3.14*r;
+        cout<<"S="<<S<<endl<<"C="<<C<<endl<<endl;
+    }
+    {//3
+        int r1=8, r2=4;
+        float S1, S2, Sk;
+        S1=3.14*r1*r1;
+        S2=3.14*r2*r2;
+        Sk=S1-S2;
+        cout<<"S1="<<S1<<endl<<"S2="<<S2<<endl<<"Sk="<<Sk<<endl<<endl;
+    }
+    {//4
+        float Sr, a=6, b=3;
+        Sr=(a+b)/2;
+        cout<<"Sr="<<Sr<<endl<<endl;
+    }
+    {//5
+        float V=9, T=7.1, S;
+        S=V*T;
+        cout<<"S="<<S<<endl<<endl;
+    }
+    {//6
+        float h1=17, t=1, g=10, h2;
+        h2=h1-g*t*t/2;
+        cout<<"h2="<<h2<<endl<<endl;
+    }
+    {//7
+        float Tc, Tf=45;
+        Tc=(Tf-32)*5/9;
+        cout<<"Tc="<<Tc<<endl<<endl;
+    }
+    return 0;
+}

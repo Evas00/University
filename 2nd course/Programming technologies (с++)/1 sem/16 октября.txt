@@ -1,0 +1,129 @@
+#include<iostream>
+using namespace std;
+
+void f1()
+{
+    int a, b, i=0, n=-1;
+    cin>>a>>b;
+    while(i<=a)
+    {
+        n++;
+        i+=b;
+    }
+    i=a-(i-b);
+    cout<<n<<endl<<i;
+}
+
+void f2()
+{
+    int n, k, d=-1, o=0, i=0;
+    cin>>n>>k;
+    while(i<=n)
+    {
+        i+=k;
+        d++;
+    }
+    o=n-(i-k);
+    cout<<d<<endl<<o;
+}
+
+void f3()
+{
+    int n, k, d=-1, i=1;
+    cin>>n;
+    while(i<=n)
+    {
+        i*=3;
+        d++;
+    }
+    cout<<d;
+}
+
+void f4()
+{
+    int a, k=0, n=-1;
+    double s=0;
+    cin>>a;
+    while(s<=a)
+    {
+        k++;
+        s+=(1.0/k);
+    }
+    cout<<k<<endl<<s;
+}
+
+void f5()
+{
+    int m=0;
+    double s=1000, p;
+    cin>>p;
+    p=1+(p/100.0);
+    while(s<=1100)
+    {
+        m++;
+        s*=p;
+    }
+    cout<<m<<endl<<s;
+}
+
+void f6()
+{
+    int a, b, nod;
+    cin>>a>>b;
+    while(b!=0)
+    {
+        nod=b;
+        b=a%b;
+        a=nod;
+    }
+    cout<<nod;
+}
+
+void f7()
+{
+    int f1=1, f2=1, fk, n;
+    cin>>n;
+    fk=f1+f2;
+    while(fk!=n)
+    {
+        f1=f2;
+        f2=fk;
+        fk=f1+f2;
+    }
+    fk=f2+fk;
+    cout<<f2<<endl<<fk;
+}
+
+void f8()
+{
+    double a1=2, a2, e, k=2;
+    cin>>e;
+    a2=2+(1.0/a1);
+    while(abs(a2-a1)>=e)
+    {
+        a1=a2;
+        a2=2.0+(1.0/a1);
+        k++;
+    }
+    cout<<k<<endl<<a1<<endl<<a2;
+}
+
+int main()
+{
+    int n;
+    cout<<"Саргсян 16.10.24";
+    cin>>n;
+    switch(n)
+    {
+        case 0: break;
+        case 1: f1(); break;
+        case 2: f2(); break;
+        case 3: f3(); break;
+        case 4: f4(); break;
+        case 5: f5(); break;
+        case 6: f6(); break;
+        case 7: f7(); break;
+        case 8: f8(); break;
+    }
+    return 0;
+}

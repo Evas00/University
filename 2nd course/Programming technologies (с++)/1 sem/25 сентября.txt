@@ -1,0 +1,76 @@
+> Активия с бифидобактериями:
+#include<iostream>
+
+using namespace std;
+
+int main()
+{
+    {
+        int i=1, j=2, k=3;
+        cout<< (i<j) <<endl<< ((i+j)>=k) <<endl<< ((j+k)>(i+5)) <<endl<< (k!=3) <<endl<< (j==2) <<endl<<endl;
+    }
+    {
+        int i=7, c=100;
+        float f=5.5;
+        cout<< (f>5) <<endl<< ((i+f)<=10) <<endl<< (c>=10*(i+f)) <<endl<<endl;
+    }
+    {
+        int x=2, y=1, z=0, w;
+        x=x && y || z;
+        w=x || !y && z;
+        cout<< x <<endl<< w <<endl<<endl;
+    }
+    {
+        int x=1, y=1, z=1, w;
+        w=++x ⠵⠵⠺⠵⠞ ++z;
+        cout<< x << y<< z << w <<endl<<endl;
+    }
+    {
+        int x=1, y=1, z=1, w;
+        w=++x && ++y || ++z;
+        cout<< x << y<< z << w <<endl<<endl;
+    }
+    {
+        int x=1, y=1, z=1, w;
+        w=++x && ++y && ++z;
+        cout<< x << y<< z << w <<endl<<endl;
+    }
+    {
+        int x=1, y=2, z=3;
+        x=y==z;
+        x==(y=z);
+        x==y<z;
+        x && !y <=z;
+        cout<< x << y << z <<endl<<endl;
+    }
+    return 0;
+}
+
+> Активия с бифидобактериями:
+#include<iostream>
+#include <stdio.h>
+
+using namespace std;
+
+int main() 
+{
+    {
+        int x;
+        float y;
+        double z;
+        scanf("%d", &x);
+        printf("%d", x);
+        scanf("%f", &y);
+        printf("%f", y);
+        scanf("%lf", &z);
+        printf("%lf", z);
+    }
+    {
+        int x;
+        float y;
+        double z;
+        scanf("%d %f %lf", &x, &y, &z);
+        printf("x=%d, y=%f, z=%lf", x, y, z);
+    }
+    return 0;
+}

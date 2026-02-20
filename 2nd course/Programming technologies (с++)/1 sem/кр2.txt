@@ -1,0 +1,34 @@
+#include<iostream>
+using namespace std;
+
+void f1(double* mas, int n){
+    int t=1;
+    for(int i=0;i<n;i++){
+        mas[i]=(t*3.0*i)/7.0;
+        t*=-1;
+    }
+}
+
+int main()
+{
+    int n=10, mas2[7][7], y, sum=0;
+    double* mas=new double[n]{0};
+    f1(mas,n);
+    for (int i=0;i<7;i++){
+        cout<<mas[i]<<' ';
+    }
+    cout<<endl;
+    for (int i=0;i<7;i++){
+        for(int j=0;j<7;j++){
+            mas2[i][j]=rand()%100-50;
+            cout<<mas2[i][j]<<' ';
+        }
+        cout<<endl;
+    }
+    cin>>y;
+    for(int i=0;i<7;i++)
+        if(mas2[i][i]<y)
+            sum+=mas2[i][i];
+    cout<<sum;
+    return 0;
+}

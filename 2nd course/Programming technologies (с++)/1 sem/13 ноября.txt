@@ -1,0 +1,176 @@
+#include<iostream>
+#include<math.h>
+using namespace std;
+
+double f1(double x)
+{
+    if(x<0)
+        return -2.0/x;
+    else if(x>=9)
+        return -x;
+        else if(x>=3)
+            return x*x*x;
+                else return 26.2;
+}
+
+double f2(int i)
+{
+    double sum=0;
+	for (int g=1; g<=i; g++)
+    	sum+=(g+1)/(2.0*g);
+	return sum;
+}
+
+int f3(int k, int d)
+{
+    return k*10+d;
+}
+
+void f4(double *x, double *y)
+{
+    int dop;
+    dop=*x;
+    *x=*y;
+    *y=dop;
+}
+
+void f5(int x, int y,double &a, double &g)
+{
+    a=(x+y)/2.0;
+	g=sqrt(x*y*1.0);
+}
+
+void f6(double &a, double &b, double &c)
+{
+    if (a > b) {
+    double temp = a;
+    a = b;
+    b = temp;
+  }
+    if (a > c) {
+    double temp = a;
+    a = c;
+    c = temp;
+  }
+    if (b > c) {
+    double temp = b;
+    b = c;
+    c = temp;
+  }
+}
+
+void f7(double *a,int n)
+{
+    for (int i=1; i<=n; i++)
+		a[i]=(i+1)/(2.0*i);
+}
+
+void f8(int *a,int n,int &max,int &min,int &sum,int &imax,int &imin)
+{
+    max=min=a[0];
+	imax=imin=0;
+	sum=0;
+	for (int i=0; i<n; i++){
+		if(a[i]>max){
+			max=a[i];
+			imax=i;
+		}
+		if(a[i]<min){
+			min=a[i];
+			imin=i;
+		}
+		if(a[i]>0)
+			sum+=a[i];
+	}
+}
+
+double f9(int n)
+{
+    double fact=1;
+    for (int i=2; i<=n; i++)
+        fact*=i;
+    return fact;
+}
+
+
+int main()
+{
+    int n=1;
+    cout << "Саргсян 13.11.24";
+    while (n) {
+        cin >> n;
+        switch (n)
+        {
+        case 1: {
+        double x;
+    	cin>>x;
+    	cout<<f1(x)<<endl;
+    	break;
+        }
+        case 2: {
+        int i;
+    	cin>>i;
+    	cout<<f2(i)<<endl;
+    	break;
+        }
+        case 3: {
+        int k, d;
+    	cin>>k>>d;
+    	cout<<f3(k,d)<<endl;
+    	break;
+        }
+        case 4: {
+        double x, y;
+    	cin>>x>>y;
+    	f4(&x,&y);
+    	cout<<x<<' '<<y<<endl;
+    	break;
+        }
+        case 5: {
+        double x, y, a, g;
+    	cin>>x>>y;
+    	f5(x,y,a,g);
+    	cout<<a<<' '<<g<<endl;
+    	break;
+        }
+        case 6: {
+        double a, b, c;
+    	cin>>a>>b>>c;
+    	f6(a,b,c);
+    	cout<<a<<' '<<b<<' '<<c<<endl;
+    	break;
+        }
+        case 7: {
+        int n;
+        cin>>n;
+        double a[n];
+        f7(a, n);
+        a[0]=0.5;
+        for (int i=0; i<=n; i++)
+		    cout<<a[i]<<' ';
+        }
+        case 8: {
+        int n,max,min,sum,imax,imin;
+		cin>>n;
+		int a[n];
+		for (int i=0; i<n; i++){
+			a[i] = rand()%100-50;
+			cout<<a[i]<<' '<<endl;
+		}
+		cout << endl;
+		f8(a,n,max,min,sum,imax,imin);
+		cout<<max<<' '<<imax<<endl;
+		cout<<min<<' '<<imin<<endl;
+		cout<<sum<<endl;
+		break;
+		}
+        case 9: {
+        int n;
+    	cin>>n;
+    	cout<<f9(n)<<endl;
+    	break;
+        }
+        }
+    }
+    return 0;
+}

@@ -1,0 +1,193 @@
+#include<iostream>
+#include<math.h>
+using namespace std;
+
+string f1(string s1, string s2)
+{
+    return s1+s2;
+}
+
+string f2(string st, char sym)
+{
+    string dop;
+    for(int i=0;i<st.length();i++){
+        dop+=st[i];
+        if(st[i]==sym)
+            dop+=st[i];
+    }
+    return dop;
+}
+
+bool f3(string st, char sym, int& v1, int& v2, int& k)
+{
+    for(int i=0;i<st.length();i++){
+        if(st[i]==sym){
+            k+=1;
+            if(v1==0)
+                v1=i+1;
+            v2=i+1;
+        }
+    }
+    if(k!=0)
+        return true;
+    else
+        return false;
+}
+
+string f4(string s1, string s2, int n)
+{
+    string dop;
+    int i;
+    if(n==0)
+        dop=s2;
+    for(i=0;i<s1.length();i++){
+        dop+=s1[i];
+        if(i==(n-1))
+            dop+=s2;
+    }
+    if(n>i)
+        dop+=s2;
+    return dop;
+}
+
+string f5(string st, int n)
+{
+    string dop;
+    if((n-1)<=st.length())
+        for(int i=0;i<n;++i)
+            dop+=st[i];
+    else{
+        int raz=n-st.length();
+        for(int i=0;i<raz;i++)
+            dop+='.';
+        dop+=st;
+    }
+    return dop;
+}
+
+string f6(int n1, int n2, string s1,  string s2)
+{
+    string dop;
+    for(int i=0;i<n1;++i)
+        dop+=s1[i];
+    for(int i=s2.length()-n2;i<s2.length();i++)
+        dop+=s2[i];
+    return dop;
+}
+
+bool f7(string s, string s0)
+{
+    int j, flag;
+    for(int i=0;i<s.size()-s0.size()+1;i++){
+        if (s[i]==s0[0])
+        {
+            j=1;
+            flag=true;
+            while((j<s0.size())and(flag))
+                if (s[i+j]!=s0[j])
+                    flag=false;
+                else
+                    j++;
+            if (flag)
+                return true;
+        }
+    }
+    return false;
+}
+
+int f8(string s,  string s0)
+{
+    int j, flag, sum = 0;
+    for(int i=0;i<s.size()-s0.size()+1;i++){
+        if(s[i]==s0[0])
+        {
+            j=1;
+            flag=true;
+            while((j<s0.size())and(flag))
+                if (s[i+j]!=s0[j])
+                    flag=false;
+                else
+                    j++;
+            if(flag)
+                sum++;
+        }
+    }
+    return sum;
+}
+
+int main()
+{
+    int n=1;
+    cout << "Саргсян 04.12.24";
+    while (n) {
+        cin >> n;
+        switch (n)
+        {
+        case 1:{ 
+            string s1,s2;
+            cin>>s1>>s2;
+            cout<<f1(s1,s2); 
+            break;
+            
+        }
+        case 2:{ 
+            string st;
+            char sym;
+            cin>>st>>sym;
+            cout<<f2(st,sym); 
+            break;
+            
+        }
+        case 3:{ 
+            int v1=0, v2=0, k=0;
+            string st;
+            char sym;
+            cin>>st>>sym;
+            if(f3(st,sym,v1, v2, k)==1)
+                cout<<"True"<<endl;
+            else 
+                cout<<"False"<<endl;
+            break;
+            cout<<f3(st,sym,v1, v2, k)<<' '<<v1<<' '<<v2; 
+            break;
+        }
+        case 4:{ 
+            int n;
+            string s1, s2;
+            cin>>s1>>s2>>n;
+            cout<<f4(s1,s2,n); 
+            break;
+        }
+        case 5:{ 
+            int n;
+            string st;
+            cin>>st>>n;
+            cout<<f5(st,n); 
+            break;
+        }
+        case 6:{ 
+            int n1, n2;
+            string s1, s2;
+            cin>>s1>>s2>>n1>>n2;
+            cout<<f6(n1,n2,s1,s2); 
+            break;
+        }
+        case 7:{ 
+            string s, s0;
+            cin>>s>>s0;
+            if(f7(s,s0)==1)
+                cout<<"True";
+            else 
+                cout<<"False";
+            break;
+        }
+        case 8:{ 
+            string s, s0;
+            cin>>s>>s0;
+            cout<<f8(s,s0);
+            break;
+        }
+        }
+    }
+    return 0;
+}

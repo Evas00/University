@@ -1,0 +1,143 @@
+#include<iostream>
+using namespace std;
+
+void f1()
+{
+    int a, b, n=0, sum=0;
+    cin>>a;
+    cin>>b;
+    b-=1;
+    for(b;b>a;b--)
+    {
+        cout<<b<<endl;
+        n+=1;
+        sum+=b;
+    }
+    cout<<n<<endl<<sum;
+}
+
+void f2()
+{
+    int n,i=1;
+    float sum;
+    cin>>n;
+    for(i=1;i<=n;i++)
+        sum+=1.0/i;
+    cout<<sum;
+}
+
+void f3()
+{
+    int n,i=1,k=1;
+    float sum;
+    cin>>n;
+    for(i=1;i<=n;i++)
+    {
+        sum+=(1+i/10.0)*k;
+        k*=-1;
+    }
+    cout<<sum;
+}
+
+void f4()
+{
+    int n,i=1;
+    float sum;
+    cin>>n;
+    for(i=1;i<=n;i++)
+        sum+=(2*i-1);
+    cout<<sum;
+}
+
+void f5()
+{
+    int n,i=1,k=-1;
+    float a,a1,sum=1;
+    cin>>a;
+    cin>>n;
+    a1=a;
+    for(i=1;i<=n;i++)
+    {
+        sum+=(a*k);
+        a*=a1;
+        k*=-1;
+    }
+    cout<<sum;
+}
+
+void f6()
+{
+    int n,i=1;
+    float f=1;
+    cin>>n;
+    for(i=1;i<=n;i++)
+        f*=i;
+    cout<<f;
+}
+
+void f7()
+{
+    int n,i=1;
+    float f=1, ak,a,a1;
+    cin>>n;
+    a=2;
+    ak=2;
+    for(i=1;i<=n;i++)
+    {
+        a1=ak;
+        ak=2+1.0/i/a1;
+        cout<<ak<<endl;
+    }
+}
+
+void f8()
+{
+    int n,i=1, g=1;
+    float sum=0, st;
+    cin>>n;
+    for(i=1;i<=n;i++)
+    {
+        st=1;
+        for(g=1;g<=i;g++)
+            st*=i;
+        sum+=st;
+    }
+    cout<<sum;
+}
+
+void f9()
+{
+    int n,i=1, g=1, n1;
+    float sum=0, st;
+    cin>>n;
+    n1=n;
+    for(i=1;i<=n;i++)
+    {
+        st=1;
+        for(g=1;g<=n1;g++)
+            st*=i;
+        n1-=1;
+        sum+=st;
+    }
+    cout<<sum;
+}
+
+int main()
+{
+    int n;
+    cout<<"Саргсян 09.10.24";
+    cin>>n;
+    switch(n)
+    {
+        case 1: f1(); break;
+        case 2: f2(); break;
+        case 3: f3(); break;
+        case 4: f4(); break;
+        case 5: f5(); break;
+        case 6: f6(); break;
+        case 7: f7(); break;
+        case 8: f8(); break;
+        case 9: f9(); break;
+    }
+    return 0;
+}

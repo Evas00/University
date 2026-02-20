@@ -1,0 +1,303 @@
+#include<iostream>
+#include<math.h>
+using namespace std;
+
+void f1()
+{
+    int i, j, mas[10][10], sum[10], s;
+    for(i=0;i<10;i++)
+        for(j=0;j<10;j++)
+            mas[i][j]=rand()%100-50;
+    for(i=0;i<10;i++){
+        for(j=0;j<10;j++)
+            cout<<mas[i][j]<<' ';
+        cout<<endl;
+    }
+    for(i=0;i<10;i++){
+        s=0;
+        for(j=0;j<10;j++)
+            s+=mas[i][j];
+    sum[i]=s;
+    }
+    cout<<endl;
+    for(i=0;i<10;i++)
+            cout<<sum[i]<<' ';
+}
+
+void f2()
+{
+    int i, j, mas[10][10], pr[10], p;
+    for(i=0;i<10;i++)
+        for(j=0;j<10;j++)
+            mas[i][j]=rand()%100-50;
+    for(i=0;i<10;i++){
+        for(j=0;j<10;j++)
+            cout<<mas[i][j]<<' ';
+        cout<<endl;
+    }
+    for(i=0;i<10;i++){
+        p=1;
+        for(j=0;j<10;j++)
+            p*=mas[j][i];
+    pr[i]=p;
+    }
+    for(i=0;i<10;i++)
+            cout<<pr[i]<<' ';
+}
+
+void f3()
+{
+    int i, j, mas[10][10], s=0;
+    for(i=0;i<10;i++)
+        for(j=0;j<10;j++)
+            mas[i][j]=rand()%100-50;
+    for(i=0;i<10;i++){
+        for(j=0;j<10;j++)
+            cout<<mas[i][j]<<' ';
+        cout<<endl;
+    }
+    for(i=0;i<10;i++){
+        if(mas[i][i]>0)
+            s+=mas[i][i];
+    }
+    cout<<s;
+}
+
+void f4()
+{
+    int i, j, mas[10][10], s=0;
+    for(i=0;i<10;i++)
+        for(j=0;j<10;j++)
+            mas[i][j]=rand()%100-50;
+    for(i=0;i<10;i++){
+        for(j=0;j<10;j++)
+            cout<<mas[i][j]<<' ';
+        cout<<endl;
+    }
+    for(i=0;i<9;i++){
+        for(j=i+1; j<10;j++)
+            s+=mas[i][j];
+    }
+    cout<<s;
+}
+
+void f5()
+{
+    int i, j, mas[10][10], s=0, k1=0, k2=0;
+    double sr, r=0;
+    for(i=0;i<10;i++){
+        for(j=0;j<10;j++){
+            mas[i][j]=rand()%100-50;
+            s+=mas[i][j];
+        }
+    }
+    for(i=0;i<10;i++){
+        for(j=0;j<10;j++)
+            cout<<mas[i][j]<<' ';
+        cout<<endl;
+    }
+    sr=s/100.0;
+    r=abs(mas[0][0]-sr);
+    for(i=0;i<10;i++){
+        for(j=0; j<10;j++){
+            if(abs(mas[i][j]-sr)<r){
+                r=abs(mas[i][j]-sr);
+                k1=i;
+                k2=j;
+            }
+        }
+    }
+    cout<<k1<<' '<<k2<<' '<<sr;
+}
+
+void f6()
+{
+    int i, j, mas[10][10], dop, k1, k2;
+    cin>>k1>>k2;
+    for(i=0;i<10;i++)
+        for(j=0;j<10;j++)
+            mas[i][j]=rand()%100-50;
+    for(i=0;i<10;i++){
+        for(j=0;j<10;j++)
+            cout<<mas[i][j]<<' ';
+        cout<<endl;
+    }
+    for(i=0;i<10;i++){
+        dop=mas[k1][i];
+        mas[k1][i]=mas[k2][i];
+        mas[k2][i]=dop;
+    }
+    cout<<endl;
+    for(i=0;i<10;i++){
+        for(j=0;j<10;j++)
+            cout<<mas[i][j]<<' ';
+        cout<<endl;
+    }
+}
+
+void f7()
+{
+    int i, j, mas[10][10], dop, k1, k2;
+    cin>>k1>>k2;
+    for(i=0;i<10;i++)
+        for(j=0;j<10;j++)
+            mas[i][j]=rand()%100-50;
+    for(i=0;i<10;i++){
+        for(j=0;j<10;j++)
+            cout<<mas[i][j]<<' ';
+        cout<<endl;
+    }
+    for(i=0;i<10;i++){
+        dop=mas[i][k1];
+        mas[i][k1]=mas[i][k2];
+        mas[i][k2]=dop;
+    }
+    cout<<endl;
+    for(i=0;i<10;i++){
+        for(j=0;j<10;j++)
+            cout<<mas[i][j]<<' ';
+        cout<<endl;
+    }
+}
+
+void f8()
+{
+    int i, j, mas[10][10], dop;
+    for(i=0;i<10;i++)
+        for(j=0;j<10;j++)
+            mas[i][j]=rand()%100-50;
+    for(i=0;i<10;i++){
+        for(j=0;j<10;j++)
+            cout<<mas[i][j]<<' ';
+        cout<<endl;
+    }
+    for(i=0;i<10;i++){
+        for(j=i;j<10;j++){
+            if(i!=j){
+                dop=mas[i][j];
+                mas[i][j]=mas[j][i];
+                mas[j][i]=dop;
+            }
+        }
+    }
+    cout<<endl;
+    for(i=0;i<10;i++){
+        for(j=0;j<10;j++)
+            cout<<mas[i][j]<<' ';
+        cout<<endl;
+    }
+}
+
+void f9()
+{
+    int i, j, mas[10][10];
+    for(i=0;i<10;i++)
+        for(j=0;j<10;j++)
+            mas[i][j]=rand()%100-50;
+    for(i=0;i<10;i++)
+        for(j=0;j<i;j++)
+                mas[i][j]=0;
+    for(i=0;i<10;i++){
+        for(j=0;j<10;j++)
+            cout<<mas[i][j]<<' ';
+        cout<<endl;
+    }
+}
+
+void f10()
+{
+    int i, j, a[10][10], b[10][10], c[10][10];
+    for(i=0;i<10;i++)
+        for(j=0;j<10;j++)
+            b[i][j]=rand()%100-50;
+    for(i=0;i<10;i++)
+        for(j=0;j<10;j++)
+            c[i][j]=rand()%100-50;
+    for(i=0;i<10;i++){
+        for(j=0;j<10;j++)
+            cout<<b[i][j]<<' ';
+        cout<<endl;
+    }
+    cout<<endl;
+    for(i=0;i<10;i++){
+        for(j=0;j<10;j++)
+            cout<<c[i][j]<<' ';
+        cout<<endl;
+    }
+    cout<<endl;
+    for(i=0;i<10;i++)
+        for(j=0;j<10;j++)
+                a[i][j]=b[i][j]+c[i][j];
+    for(i=0;i<10;i++){
+        for(j=0;j<10;j++)
+            cout<<a[i][j]<<' ';
+        cout<<endl;
+    }
+}
+
+void f11()
+{
+    int i, j, gl[10];
+    double mas[10][10];
+    for(i=0;i<10;i++)
+        for(j=0;j<10;j++)
+            mas[i][j]=rand()%100-50;
+    for(i=0;i<10;i++)
+        gl[i]=mas[i][i];
+    for(i=0;i<10;i++){
+        for(j=0;j<10;j++)
+            cout<<mas[i][j]<<' ';
+        cout<<endl;
+    }
+    for(i=0;i<10;i++)
+        for(j=0;j<10;j++)
+            mas[i][j]=(double)mas[i][j]/gl[i];
+    cout<<endl;
+    for(i=0;i<10;i++){
+        for(j=0;j<10;j++)
+            cout<<mas[i][j]<<' ';
+        cout<<endl;
+    }
+}
+
+void f12()
+{
+    int i, j;
+    double mas[10][10];
+    for(i=0;i<10;i++){
+        for(j=i;j<10;j++){
+            mas[i][j]=(i+j)/(2.0*(i+j+1));
+            mas[j][i]=mas[i][j];
+        }
+    }
+    for(i=0;i<10;i++){
+        for(j=0;j<10;j++)
+            cout<<mas[i][j]<<' ';
+        cout<<endl;
+    }
+}
+
+int main()
+{
+    int n;
+    cout << "Саргсян 06.11.24";
+    while (n) {
+        cin >> n;
+        switch (n)
+        {
+        case 1: f1(); break;
+        case 2: f2(); break;
+        case 3: f3(); break;
+        case 4: f4(); break;
+        case 5: f5(); break;
+        case 6: f6(); break;
+        case 7: f7(); break;
+        case 8: f8(); break;
+        case 9: f9(); break;
+        case 10: f10(); break;
+        case 11: f11(); break;
+        case 12: f12(); break;
+        }
+    }
+    return 0;
+}

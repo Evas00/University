@@ -1,0 +1,120 @@
+#include <iostream>
+using namespace std;
+
+string f1(string ss)
+{
+   string str="";
+    int k=0;
+    for(int i=0;i<ss.length();i++){
+        if(k==1){
+            if(ss[i]=='\\'){
+                k++;
+                break;
+            }
+            str+=ss[i];
+        }
+        if((k==0)and(ss[i]=='\\')) 
+            k++;
+    }
+    if(k==1)
+        str='\\';
+    return str;
+}
+
+string f2(string str, int k){
+    string a1="abcdefghijklmnopqrstuvwxyz";
+    string a2="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    string str2=str;
+    for(int i=0;i<str.length();i++){
+        for(int j=0;j<a1.length();j++){
+            if(str[i]==a1[j]){
+                if (j+k<26)
+                    str2[i]=a1[j+k];
+                else
+                    str2[i]=a1[j-26+k];
+            }
+            else if (str[i]==a2[j]) {
+                if (j+k<26) 
+                    str2[i]=a2[j+k];
+                else 
+                    str2[i]=a2[j-26+k];
+            }
+        }
+    }
+    return str2;
+}
+
+string f3(string str, int k){
+    string a1="abcdefghijklmnopqrstuvwxyz";
+    string a2="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    string str2=str;
+    for (int i=0;i<str.length();i++){
+        for (int j=0;j<a1.length();j++){
+            if(str[i]==a1[j]){
+                if(j-k<0)
+                    str2[i]=a1[26+(j-k)];
+                else
+                    str2[i]=a1[j-k];
+            }
+            else if(str[i]==a2[j]){
+                if(j-k<0)
+                    str2[i]=a2[26+(j-k)];
+                else 
+                    str2[i]=a2[j-k];
+            }
+        }
+    }
+    return str2;
+}
+
+bool f4(string str)
+{
+    int j=str.length()-1;
+    for(int i=0;i<str.length()/2;i++){
+        if(str[i]==str[j])
+            j--;
+        else
+            return false;
+    }
+    return true;
+}
+
+int main()
+{
+    int n=1;
+    cout<<"Саргсян 11.12.24";
+    while (n){
+        cin>>n;
+        switch(n)
+        {
+        case 1:{
+            string ss;
+            cin>>ss;
+            cout<<f1(ss)<<endl;
+            break;
+        }
+        case 2:{
+            string s;
+            int K;
+            cin>>s>>K;
+            cout<<f2(s, K)<<endl;
+        }
+        case 3:{
+            string s;
+            int K;
+            cin>>s>>K;
+            cout<<f3(s, K)<<endl;
+            break;
+        }
+        case 4:{
+            string s;
+            cin>>s;
+            if(f4(s)) 
+                cout<<"true";
+            else
+                cout<<"false";
+            break;
+        }
+        }
+    }
+}

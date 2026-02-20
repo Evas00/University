@@ -1,0 +1,4 @@
+﻿  ср.cpp
+C:\Users\User\Desktop\уник\Технологии программирования\ср\ср\ср.cpp(21,13): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+C:\Users\User\Desktop\уник\Технологии программирования\ср\ср\ср.cpp(43,10): warning C4305: аргумент: усечение из "double" в "float"
+  ср.vcxproj -> C:\Users\User\Desktop\уник\Технологии программирования\ср\ср\x64\Debug\ср.exe

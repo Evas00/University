@@ -1,0 +1,39 @@
+#include<iostream>
+#include<math.h>
+using namespace std;
+
+void f1(int a, int b, double& sra, double& srg){
+    sra=(a+b)/2.0;
+    srg=sqrt(a*b);
+}
+
+void f2(double* mas, double& min, int& k, int n){
+    min=mas[0]
+    k=0;
+    for(int i=1; i<n; i++){
+        if(min>mas[i]){
+            k=i;
+            min=mas[i];
+        }
+    }
+}
+
+int main()
+{
+    int a, b, t=1, n, k;
+    double sra, srg, min;
+    cout << "Саргсян 04.11.24";
+    cin>>a>>b;
+    f1(a,b,sra,srg);
+    cout<<sra<<' '<<srg<<endl;
+    cin>>n;
+    double* mas=new double[n];
+    for (int i=1; i<n; i++) {
+        mas[i]=t*((2.0-i)/(2.0+i));
+        cout<<mas[i]<<' ';
+        t*=-1;
+    }
+    cout<<endl;
+    f2(mas,min,k,n);
+    cout<<min<<' '<<k<<endl;
+}

@@ -1,0 +1,91 @@
+#include <iostream>
+
+using namespace std;
+ void f1()
+{
+    int a = 5, b = 7;
+    float sr;
+    sr=(a + b) / 2.0;
+    cout<< sr << endl << endl;
+}
+ void f2()
+{
+    double x = 12, a = 72, y = 10, x1, y1;
+    x1=a/x;
+    y1=x1*y;
+    cout<< x1 << endl << y1 << endl << endl;
+}
+ void f3()
+{
+    double V1 = 70, V2 = 62, T = 5, S1, S2;
+    S1=T*(V1+V2);
+    S2=T*(V1-V2);
+    cout<< S1 << endl << S2 << endl << endl;
+}
+ void f4()
+{
+    int n = 5688, m;
+    m=n/1024;
+    cout<< m << endl << endl;
+}
+ void f5()
+{
+    int n = 6684, m, h, m2;
+    m=n/60;
+    h=m/60;
+    m2=m-h*60;
+    cout<< m << endl << h << endl;
+    cout<< h << ":" << m2 << endl << endl;
+}
+ void f6()
+{
+    int n = 684, a1, a2, a3, s, p;
+    a1=n/100;
+    a2=(n/10)%10;
+    a3=(n%100)%10;
+    s=a1+a2+a3;
+    p=a1*a2*a3;
+    cout<< a1 << endl << a2 << endl << a3 << endl;
+    cout<< s << endl << p << endl;
+    cout<< a3 << a2 << a1 << endl << endl;
+}
+ void f7()
+{
+    int k = 254, d;
+    k+=1;
+    d=k%7;
+    cout<< d << endl << endl;
+}
+ void f8()
+{
+    int a=13, b=15, c=3, k, S;
+    k=(a/c)*(b/c);
+    S=(a*b)-(k*c*c);
+    cout<< k << endl << S << endl << endl;
+}
+ void f9()
+{
+    int x=3, y=7, c ,k;
+    c=abs(x-y);
+    k=c%2;
+    if(k==0){
+        cout<< "Истина" << endl << endl;
+    }
+    else
+    {
+        cout<< "Ложь" << endl << endl;
+    }
+}
+int main()
+{
+    f1();
+    f2();
+    f3();
+    f4();
+    f5();
+    f6();
+    f7();
+    f8();
+    f9();
+    return 0;
+}

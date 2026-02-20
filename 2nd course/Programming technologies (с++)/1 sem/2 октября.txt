@@ -1,0 +1,185 @@
+#include<iostream>
+using namespace std;
+
+void f1()
+{
+    int a,b,c,max,n;
+   scanf("%d %d %d",&a,&b,&c);
+    if (a>=b && a>=c)
+    {
+       max=a;
+       n=1;
+    }
+    if (b>=a && b>=c)
+    {
+       max=b;
+       n=2;
+    }
+    if (c>=b && c>=a)
+    {
+       max=c;
+       n=3;
+    }
+    printf("Максимальное: %d, номер: %d",max,n);
+}
+
+void f2()
+{
+    int a,b,c,n1,n2,n3;
+    scanf("%d %d %d",&a,&b,&c);
+    if (a>=b && a>=c)
+    {
+       n1=a;
+       n2=b;
+       n3=c;
+       if (c>=b)
+       {
+           n2=c;
+           n3=b;
+       }
+    }
+    if (b>=a && b>=c)
+    {
+       n1=b;
+       n2=a;
+       n3=c;
+       if (c>=a)
+       {
+           n2=c;
+           n3=a;
+       }
+    }
+    if (c>=b && c>=a)
+    {
+       n1=c;
+       n2=a;
+       n3=b;
+       if (b>=a)
+       {
+           n2=b;
+           n3=a;
+       }
+    }
+    printf("По возрастанию: %d,%d,%d",n3,n2,n1);
+}
+
+void f3()
+{
+    int a,b,c,n1,n2;
+    scanf("%d %d %d",&a,&b,&c);
+    n1=abs(b-a);
+    n2=abs(c-a);
+    if (n1==n2)
+    {
+        printf("Точки c и b на расстоянии %d",n1);
+    }
+    else
+    {
+        if (n1<n2)
+        {
+           printf("Точка b на расстоянии %d",n1); 
+        }
+        else
+        {
+            printf("Точка c на расстоянии %d",n2); 
+        }
+    }
+}
+
+void f4()
+{
+    int x1,x2,x3,y1,y2,y3;
+    scanf("%d %d %d %d %d %d",&x1,&y1,&x2,&y2,&x3,&y3);
+    if (x1==x2)
+        cout<<x3<<endl;
+    else
+        if (x2==x3)
+            cout<<x1<<endl;
+        else
+            cout<<x2<<endl;
+    if (y1==y2)
+        cout<<y3<<endl;
+    else
+        if (y2==y3)
+            cout<<y1<<endl;
+        else
+            cout<<y2<<endl;
+}
+
+void f5()
+{
+    int x;
+    double y;
+    cin>>x;
+    if (x<0)
+        y=(-2.0)/x;
+    if (x>=9)
+        y=(-x)/3.0;
+    if (x<9 && x>=3)
+        y=x*x*x;
+    if (x<3 && x>=0)
+        y=26.2;
+    cout<<y;
+}
+
+void f6()
+{
+    int n;
+    cin>>n;
+    if (n%4==0)
+    {
+        if (n%100==0 && n%400!=0)
+            cout<<"365";
+        else
+            cout<<"366";
+    }
+    else
+        cout<<"365";
+}
+
+void f7()
+{
+    int n;
+    cin>>n;
+    switch (n)
+    {
+    case 1:cout << "понедельник";break;
+    case 2:cout << "вторник";break;
+    case 3:cout << "среда";break;
+    case 4:cout << "четверг";break;
+    case 5:cout << "пятница";break;
+    case 6:cout << "суббота";break;
+    case 7:cout << "воскресенье"; break;
+    }
+}
+
+void f8()
+{
+    int n1,n2,s;
+    scanf("%d %d %d",&s,&n1,&n2);
+    s+=n1+n2;
+    while (s<1)
+        s+=4;
+    while (s>4)
+        s-=4;
+    switch (s)
+    {
+    case 1:cout << "север";break;
+    case 2:cout << "запад";break;
+    case 3:cout << "юг";break;
+    case 4:cout << "восток";break;
+    }
+}
+
+int main()
+{
+    //f1();
+    //f2();
+    //f3();
+    //f4();
+    //f5();
+    //f6();
+    //f7();
+    //f8();
+    return 0;
+}

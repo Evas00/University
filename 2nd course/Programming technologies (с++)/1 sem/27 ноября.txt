@@ -1,0 +1,62 @@
+#include <iostream>
+using namespace std;
+
+double f1(double x, double e, int& n){
+  int t=-1, j=1;
+  double a, x2=x, sum=0;
+  a=(t*x2)/j;
+  sum+=a;
+  while(abs(a)>e){
+    ++n;
+    x2*=x;
+    j*=n;
+    t*=-1;
+    a=(t*x2)/(j*1.0);
+    sum+=a;
+  }
+  return sum;
+}
+
+double f2(double* mas, int k, int& no) {
+  double sum=0;
+  for (int i=0; i<k;i++) {
+    if(mas[i]<0){
+      sum+=mas[i];
+      ++no;
+    }
+  }
+  return sum;
+}
+
+void f3(double* mas, int k) {
+  for(int i=0;i<k;i++) {
+    if(mas[i]<0)
+        mas[i]=(3.0*i)/((2.0*i)+1.0);
+  }
+}
+
+int main() {
+  int n=1, t=1, no=0;
+  double x, e, sum, sumo;
+  cout << "Саргсян 27.11.24";
+  cin>>x>>e;
+  sum=f1(x,e,n);
+  cout<<sum<<' '<<n<<endl;
+  
+  cin>>n;
+  double* mas=new double[n];
+  for (int i=0; i<n; i++) {
+    mas[i]=t*((2.0*i)/(i+1.0));
+    cout<<mas[i]<<' ';
+    t*=-1;
+  }
+  cout<<endl;
+
+  sumo=f2(mas,n,no);
+  cout<<sumo<<' '<<no<<endl;
+  
+  f3(mas,n);
+  for (int i=0;i<n;i++)
+    cout<<mas[i]<<' ';
+    cout<<endl;
+}

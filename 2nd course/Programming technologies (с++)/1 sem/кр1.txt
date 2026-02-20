@@ -1,0 +1,79 @@
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+void dis(int a, int b, int c){
+    double D, x1, x2, x;
+    D=b*b-4*a*c;
+    if(D>0){
+        x1=(-b+sqrt(D))/(2.0*a);
+        x2=(-b-sqrt(D))/(2.0*a);
+        cout<<"x1 = "<<x1<<endl;
+        cout<<"x2 = "<<x2<<endl;
+    }
+    else if(D==0){
+        x=(-b)/(2.0*a);
+        cout<<"x1 = x2 = "<<x<<endl;
+    }
+    else{
+        D*=-1;
+        x=(-b)/(2.0*a);
+        D=sqrt(D)/(2.0*a);
+        cout<<"x1 = "<<x<<" + "<<D<<" * i"<<endl;
+        cout<<"x2 = "<<x<<" - "<<D<<" * i"<<endl;
+    }
+}
+
+double Y(int x){
+    if(x<0)
+        return 4.0/x;
+    else if(x>=6)
+        return -x/3.0;
+        else if(x>=1)
+            return x*x*x;
+                else return 6.2;
+}
+
+int main()
+{
+    int a, b, c, x;
+    cout<<"Саргсян Ева Артуровна группа 2.9"<<endl;
+    cin>>a>>b>>c;
+    if(a==0){
+        if(b==0){
+            if(c==0){
+                cout<<"x - любое число";
+            }
+            else{
+                cout<<"Решений нет";
+            }
+        }
+        else{
+            if(c==0){
+                cout<<"x = 0";
+            }
+            else{
+                cout<<"x = "<<(-c)/b;
+            }
+        }
+    }
+    else{
+        if(b==0){
+            if((-c)/a>=0){
+                cout<<"x = "<<sqrt((-c)/a);
+            }
+            else{
+                cout<<"Решений нет";
+            }
+        }
+        else if(c==0){
+            cout<<"x1 = 0"<<endl;
+            cout<<"x2 = "<<(-b)/(2.0*a)<<endl;
+        }
+        else{
+            dis(a,b,c);
+        }
+    }
+    cin>>x;
+    cout<<endl<<Y(x);
+}
