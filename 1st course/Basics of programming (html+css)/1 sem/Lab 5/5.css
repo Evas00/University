@@ -1,0 +1,13 @@
+div {
+    font-family: arial;
+    font-size: 15px;
+    line-height: 20px;
+    font-style: italic;
+}
+
+span {
+    font-family: Courier;
+    font-size: 14px;
+    color: blue;
+    font-weight: bold;
+}

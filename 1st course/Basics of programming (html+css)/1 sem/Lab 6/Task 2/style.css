@@ -1,0 +1,12 @@
+#outer{
+  width: 500px;
+  border: 1px solid rgb(70,130,180);
+  margin: 100px auto;
+}
+
+#img1{
+  border: 4px ridge lightblue;
+  padding: 10px;
+  display: block;
+  margin: 25px auto;
+}

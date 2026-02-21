@@ -1,0 +1,14 @@
+.main {
+    font-family: Arial;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#elem {
+    font-size: 24px;
+    color: green;
+}
+
+p {
+    font-size: 40px;
+}

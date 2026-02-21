@@ -1,0 +1,12 @@
+LEARNER'S TASK FOR PRACTICE
+
+1. General task: in the csv/let_pr/nhl directory, there is a csv file containing the statistics of NHL players from 1940 to 2018. Write a script that takes a year (Season) as an argument. The script should output a table of the top scorers for that season.
+
+2. Individual task: the function takes a year as an argument and displays a histogram of the number of goals scored by the top ten defensemen of the season.
+
+
+ЗАДАНИЕ ОБУЧАЮЩЕГОСЯ НА ПРАКТИКУ
+
+1. Общее задание: в каталоге csv/let_pr/nhl находится файл csv содержащий статистику игроков НХЛ с 1940 по 2018 годы. Написать скрипт в качестве аргумента которого будет год (поле Season). Скрипт должен выдавать таблицу бомбардиров данного сезона.
+
+2. Индивидуальное задание: функция принимает в качестве аргумента год, выводит гистограмму количество забитых голов десяти лучших защитников сезона по этому показателю.

@@ -1,0 +1,51 @@
+body {
+    background-image: url(WEB.png);
+    background-size: cover;
+}
+
+* {
+    font-family: cursive;
+}
+
+p[align="center"] {
+    color: green;
+    font-size: 32px;
+}
+
+.span1 {
+    font-style: italic;
+    text-transform: uppercase;
+}
+
+li:nth-child(2n) {
+    color: red;
+}
+
+p + span {
+    font-family: Times, "Times New Roman", Georgia, serif;
+    font-size: 18px;
+}
+
+.css1 {
+    list-style-type: disc;
+}
+
+#ul1 {
+    list-style-type: square;
+}
+
+a {
+    color: inherit;
+}
+
+a:hover {
+    color: aqua;
+}
+
+.css1 > a {
+    text-decoration-style: dashed;
+}
+
+#ul1 .css1 {
+    font-weight: bolder;
+}

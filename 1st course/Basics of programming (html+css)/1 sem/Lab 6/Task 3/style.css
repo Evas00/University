@@ -1,0 +1,25 @@
+body{
+  margin: 100px 0 0 200px;
+  background-image: url(../Images/bgrd.jpg);
+  background-repeat: repeat-y;
+  background-color: lightblue;
+  background-attachment: fixed;
+}
+
+#outer{
+  width: 500px;
+  border: 1px solid rgb(70,130,180);
+  text-align: center;
+  background-image: url(../Images/wrapper_bg.gif);
+}
+
+#img1{
+  border: 4px ridge lightblue;
+  padding: 10px;
+  margin: 25px 0;
+  background-color: lightblue;
+}
+
+.height{
+  height: 1200px;
+}

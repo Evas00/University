@@ -1,0 +1,10 @@
+﻿var
+  a:=0.3;
+  b:=0.9;
+  x:=0.61;
+  y,r:real;
+ begin
+   y:=(exp(2*x*ln(a))+(1/b)*cos(a+b)*x)/(x+1);
+   r:=sqrt(sqr(x)+b)-sqr(b)*sin(x+a)*sin(x+a)*sin(x+a)/x;
+   print(y,r);
+ end.
